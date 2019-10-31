@@ -1,0 +1,17 @@
+name: kube-state-metrics
+display-name: Kube State Metrics
+summary: Metrics for workloads in Kubernetes
+description: Provides metrics intended for consumption by Prometheus about workloads in Kubernetes.
+maintainers: [Juju Developers <juju@lists.ubuntu.com>]
+tags: [metrics, kubernetes]
+series: [kubernetes]
+resources:
+  oci-image:
+    type: oci-image
+    description: 'Backing OCI image'
+    auto-fetch: true
+    upstream-source: quay.io/coreos/kube-state-metrics:v1.8.0
+deployment:
+  type: stateless
+  service: cluster
+min-juju-version: 2.6.0
